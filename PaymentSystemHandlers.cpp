@@ -1,5 +1,8 @@
 #include "PaymentSystem.h"
 #include <iostream>
+#include <string>
+#include <unordered_map>
+#include <functional>
 
 using namespace std;
 
