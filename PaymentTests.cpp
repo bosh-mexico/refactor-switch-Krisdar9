@@ -16,9 +16,21 @@ void testParsePaymentMode() {
     assert(ps.parsePaymentMode("") == PaymentSystem::PaymentMode::Unknown);
 }
 
+void testCheckout() {
+    PaymentSystem ps;
+    double amount = 50.0;
+    
+    ps.checkout(PaymentSystem::PaymentMode::PayPal, amount);
+    ps.checkout(PaymentSystem::PaymentMode::GooglePay, amount);
+    ps.checkout(PaymentSystem::PaymentMode::CreditCard, amount);
+    ps.checkout(PaymentSystem::PaymentMode::Unknown, amount);
+
+    cout << endl;
+}
 
 
 int main() {
     testParsePaymentMode();
+    testCheckout()
     return 0;
 }
